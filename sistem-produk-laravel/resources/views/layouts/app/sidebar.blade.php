@@ -18,6 +18,9 @@
                     <flux:sidebar.item icon="rectangle-stack" :href="route('produk.index')" :current="request()->routeIs('produk.index')" wire:navigate>
                         {{ __('Produk')  }}
                     </flux:sidebar.item>
+                    <flux:sidebar.item icon="users" :href="route('karyawan.index')" :current="request()->routeIs('karyawan.index')" wire:navigate>
+                        {{ __('Karyawan')  }}
+                    </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 
