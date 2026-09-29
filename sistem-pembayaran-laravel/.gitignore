@@ -23,6 +23,7 @@ yarn-error.log
 /.vscode
 /.zed
 /.agents
+/.agents/skills/
 /.amp
 /.claude
 /.cursor
@@ -37,3 +38,9 @@ yarn-error.log
 /boost.json
 /opencode.json
 /opencode.jsonc
+.codex/
+.hermes/
+.opencode/
+.gemini/
+.github/
+
