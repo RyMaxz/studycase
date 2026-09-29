@@ -67,7 +67,6 @@ class KaryawanController extends Controller {
             ),
         ];
 
-        // Hitung total gaji dari semua karyawan
         $totalGaji = array_sum(
             array_map(fn($k) => $k->hitungGaji(), $karyawan)
         );
@@ -93,7 +92,6 @@ class KaryawanController extends Controller {
     // Menampilkan detail satu karyawan berdasarkan NIP
     // --------------------------------------------------------
     public function show(string $nip) {
-        // Biasanya dari database, tapi kita simulasikan
         $karyawan = $this->cariKaryawanByNip($nip);
 
         if (!$karyawan) {
@@ -101,8 +99,6 @@ class KaryawanController extends Controller {
         }
 
         $judulHalaman = "Detail Karyawan: {$karyawan->getNama()}";
-
-        // compact() dengan satu variabel pun tetap valid
         return view('karyawan.show', compact('karyawan', 'judulHalaman'));
     }
 
@@ -111,7 +107,7 @@ class KaryawanController extends Controller {
     // Laporan penggajian bulanan
     // --------------------------------------------------------
     public function laporanGaji() {
-        $karyawan   = $this->getDaftarKaryawan(); // Ambil semua karyawan
+        $karyawan   = $this->getDaftarKaryawan();
         $totalGaji  = array_sum(array_map(fn($k) => $k->hitungGaji(), $karyawan));
         $periode    = now()->translatedFormat('F Y');
         $judulHalaman = 'Laporan Gaji Bulanan';
@@ -124,14 +120,11 @@ class KaryawanController extends Controller {
         ));
     }
 
-    // Helper method private
     private function cariKaryawanByNip(string $nip): ?KaryawanTetapDTO {
-        // Implementasi pencarian...
         return null;
     }
 
     private function getDaftarKaryawan(): array {
-        // Return array of objects...
         return [];
     }
 }

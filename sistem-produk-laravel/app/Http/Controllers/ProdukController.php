@@ -18,7 +18,6 @@ class ProdukController extends Controller
     {
         $produk = $this->service->filter($request->only(['kategori', 'tersedia', 'harga_min']));
 
-        // Statistics
         $jumlahProduk = $this->service->getJumlahProduk();
         $stokTerbanyak = $this->service->getStokTerbanyak();
         $categories = $this->service->getCategories();
